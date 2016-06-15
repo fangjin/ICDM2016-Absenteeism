@@ -151,8 +151,7 @@
 \begin{abstract}
 Event detection in online social media has primarily focused on identifying
 abnormal spikes, or bursts, in activity. However, disruptive events such as socio-economic disasters, civil unrest, and even power outages, often result in abnormal troughs involving group absenteeism of activity. We present the first study, to our knowledge, that models absenteeism and uses detected absenteeism as a basis for event detection in location based social networks (LBSN) such as Twitter. Our framework addresses the challenges of (i) early detection of absenteeism, (ii) identifying the point of origin, and (iii) identifying groups or communities underlying the absenteeism. Our approach uses the formalism of graph wavelets to represent the spatiotemporal structure and user activity in a LSBN. This formalism affords multiscale analysis, enabling us to detect anomalous behavior at different graph resolutions, which in turn allows identification of event location and anomalous groups underlying the network. We introduce a systematic group anomaly detection method using graph wavelets to detect absenteeism group and burst group simultaneously.
-%We introduce a systematic two-pass detection method using graph wavelets to detect group absenteeism and then check if there is a subsequent activity spike.
-The effectiveness of our approach is highlighted with three case studies involving Twitter activity over Latin American countries.
+The effectiveness of our approach is verified with protest events involving Twitter activity over Latin American countries.
 \end{abstract}
 
 % no keywords
@@ -206,8 +205,8 @@ By employing wavelet transforms on the graph, we can construct a wavelet functio
 
 Our contributions are thus:
 \begin{itemize}
-\item To the best of our knowledge this is the first study to modeling group absenteeism as a basis for event detection. We study different group anomaly, either burst or absenteeism, or first absenteeism then subsequent burst, and prove those anomaly is indicative at detecting events such as man-made protests or natural disasters.
-\item We incorporate graph wavelets as a mechanism to detect the most anomalous subgraphs at different scales. We demonstrate how this is a powerful appraoch for social media analytics.
+\item To the best of our knowledge this is the first study to modeling group absenteeism as a basis for event detection. We study different group anomaly, either burst or absenteeism, and prove those anomaly is indicative at detecting events such as man-made protests or natural disasters.
+\item We incorporate graph wavelets as a mechanism to detect the most anomalous subgraphs at different scales. We demonstrate how this is a powerful approach for social media analytics.
 \item We define the graph anomaly index, which can decide whether a graph is abnormal. Furthermore, we are able to locate the central node and identify the abnormal groups.
 %\item We propose a novel two-pass event detection method that uses correlation scores between the group depicting \textit{absenteeism} and the group demonstrating increased activity to probabilistically determine the likelihood of an event.
 \end{itemize}
@@ -750,7 +749,7 @@ $k_0$ and $k_1$, given a new $\gamma_f'(\mathbf{G})$, the events number is estim
 We did experiment on three major protest countries: Brazil, Mexico and Venezuela, from Jan 2013 to Dec 2014. Taken the Gold Standard Report (GSR) as grand truth, we run the graph wavelet approach. For each day, decide whether there is any anomaly, if there is, identify the group of abnormal cities, then compare with GSR, see if the selected cities have protest events on that day, how many of them are matched with grand truth, how many of them do not have protest. We use recall, precision and F-measure to evaluate the performance.
 To evaluate our graph wavelet approach, we also compare with some intuitive approaches, like frequency based random assign, we call it baseline model, and Z-score based selection methods. The baseline model is built according to the historical protest records of each city, based on frequency, predict the future protests occurrence. The Z-score approach is, selecting the group of cities whose Z-score across some threshold, say $|Zscore|>3$.
 
-We compare three models performance over two years period test, and show the overall results on Table~\ref{table:models_compare}. Generally speaking, graph wavelet has better precision, recall, and F-measure scores than baseline across countries. The mean F-measure for graph wavelet detection across models and countries is greater than that for other predictions. Interestingly, we find that the graph wavelet work at different efficiency levels depending on each countries. Compared with Figure~\ref{Brazil_performance}, Figure~\ref{Mexico_performance} and Figure~\ref{Venezuela_performance}, we found graph wavelet model has a much higher recall in Venezuela than in Brazil, while has a inferior quality of event detection in Mexico than in Venezuela.
+We compare three models performance over two years period test, and show the overall results on Table~\ref{table:models_compare}. Generally speaking, graph wavelet has better precision, recall, and F-measure scores than baseline across countries. The mean F-measure for graph wavelet detection across models and countries is greater than that for other predictions. Interestingly, we find that the graph wavelet work at different efficiency levels depending on each countries. Compared with Figure~\ref{Brazil_performance}, Figure~\ref{Mexico_performance} and Figure~\ref{Venezuela_performance}, we found graph wavelet model has a much higher recall in Venezuela than in Brazil, while has an inferior quality of event detection in Mexico than in Venezuela.
 
 
 \begin{table}[bth] %!htp
@@ -867,7 +866,7 @@ As a result, we note that there is a strong connection between the burst in acti
 
 
 From the graph wavelets generated in absenteeism time period~\ref{fig:absent_Chile_wavelet}, we found the central node to be the city of `Iquique'.
-We study the timeseries (Fig.~\ref{fig:earthquake}) of Twitter activity for Iquique and word clouds (see Fig..~\ref{fig:earthquake-cloud}) generated from their content, to see how events unfolded during the course of the earthquake.
+We study the time series (Fig.~\ref{fig:earthquake}) of Twitter activity for Iquique and word clouds (see Fig..~\ref{fig:earthquake-cloud}) generated from their content, to see how events unfolded during the course of the earthquake.
 Strong absenteeism is observed from 8:45 PM to 9:20 PM. We also checked  user mobility through geotagged tweets from city of Iquique, on April 1, 2014 and found that the user mobility fraction had increased by 15.4\%.
 
 \begin{figure}[t]
@@ -948,7 +947,9 @@ Previous research has demonstrated the importance of burst detection in Twitter.
 
 \section{Conclusion}
 \label{sec:conclusion}
-Existing approaches for event detection suffer from an inherent latency in their detection process. It is because they use the bursty signals from abnormal activity on social networks, but miss the absenteeism signal that precedes these bursts. Our approach bridges this shortcoming by successfully modeling this \textit{lull-ness}. We have presented a systematic and unified framework for detecting, identifying event's location and distinguishing anomalous groups in Twitter. From the three case studies, we have shown that the initial phase in the evolution of an disruptive, event is characterized by group absenteeism behavior. This behavior is further underlined by an increase in user mobility. As in the case of ``Christmas Day" event we observed absenteeism from Argentina Twitter users in days leading to December 25th was characterized by increased mobility (inferred from geolocated tweets). We defined an absenteeism score over the groups of cities that form our Twitter network and used it construct wavelet transforms, that not only to detect the anomalous subgraphs at different scales, but also to find the geographical focal point of the anomaly.
+Existing approaches for event detection suffer from an inherent latency in their detection process. It is because they use the bursty signals from abnormal activity on social networks, but miss the absenteeism signal that precedes these bursts. Our approach bridges this shortcoming by successfully modeling this \textit{lull-ness}. We defined an absenteeism score over the groups of cities that form our Twitter network and used it construct wavelet transforms, that not only to detect the anomalous subgraphs at different scales, but also to find the geographical focal point of the anomaly. In this work, we have presented a systematic and unified framework for detecting, identifying event's location and distinguishing anomalous groups in Twitter. 
+
+%From the three case studies, we have shown that the initial phase in the evolution of a disruptive, event is characterized by group absenteeism behavior. This behavior is further underlined by an increase in user mobility. As in the case of ``Christmas Day" event we observed absenteeism from Argentina Twitter users in days leading to December 25th was characterized by increased mobility (inferred from geolocated tweets). 
 
 %In future work, we plan to extend our detection model to capture extent of an event's influence over network. Another interesting extension of our work would be to include absenteeism as feature to classify event of different nature (disruptive vs non-disruptive).
 

@@ -339,7 +339,7 @@ Figure~\ref{fig:graph_G} shows an undirected graph $\mathbf{G_1}$, and each edge
     {
 		\includegraphics[height=0.8in] {figures/graph_G.png}
 	}
-	\caption{Graph $\mathbf{G_1}$, all edges's weight are $1$.}
+	\caption{Graph $\mathbf{G_1}$, all edges' weight are $1$.}
 	\label{fig:graph_G}
 \end{figure}
 
@@ -360,7 +360,7 @@ Figure~\ref{fig:graph_G} shows an undirected graph $\mathbf{G_1}$, and each edge
 		\label{fig:same_graph}
 	}
 
-	\caption{(a): Eigenvector distribution along each vertex in graphs $\mathbf{G_1}$.  (b): anomaly index $\gamma_f(l)$ of $f_1=[2,3,4,3,2,1]$ on graph $\mathbf{G_1}$. (c): anomaly index $\gamma_f(l)$ of $f_1=[2,3,4,3,2,1]$  and $f_2=[2,2,-3,4,3,1]$ on graph $\mathbf{G_1}$, where $\gamma_{f_1}=0.905$, and $\gamma_{f_1}=0.073$, labelled in red oval.}
+	\caption{(a): Eigenvector distribution along each vertex in graph $\mathbf{G_1}$.  (b): anomaly index $\gamma_f(l)$ of $f_1=[2,3,4,3,2,1]$ on graph $\mathbf{G_1}$. (c): anomaly index $\gamma_f(l)$ of $f_1=[2,3,4,3,2,1]$  and $f_2=[2,2,-3,4,3,1]$ on graph $\mathbf{G_1}$, where $\gamma_{f_1}=0.905$, and $\gamma_{f_1}=0.073$, labelled in red ovals.}
 	\label{fig:f_on_g2}
 \end{figure}
 
@@ -411,7 +411,7 @@ In this subsection, we introduce the anomaly index $\gamma_f(l;\mathbf{G})$ to m
 		\includegraphics[width= 3.2in,height=1in] {figures/new_graph.png}
 		\label{fig:distribution2}
 	}
-	\caption{Anomaly index of $\mathbf{G_2}$ and $\mathbf{G_3}$.}
+	\caption{Anomaly indices of $\mathbf{G_2}$ and $\mathbf{G_3}$.}
 	\label{fig:new_graph}
 \end{figure}
 
@@ -510,7 +510,7 @@ f(n)=\sum_{a=v_0}^{v_{N-1}}\sum_{j=0}^{J}W_{f}(s_j,a)\psi_{s,a}(n).
 		\includegraphics[width=1.5in, height=1.1in] {figures/wavelet4.png}
 		\label{fig:scale4}
 	}
-	\caption{Using graph wavelets for group anomaly identification.}
+	\caption{Graph wavelet scale and graph wavelet coefficient.}
 	\label{fig:graphwaveletscale}
 \end{figure*}
 
@@ -571,66 +571,17 @@ As long as the scale level $J$ is high enough, $f$ can be well decomposed into t
 \end{enumerate}
 
 
-%\subsection{Group Absenteeism Event Detection}
-%\label{sec:Group Absenteeism Event Detection}
-%In our real world, there are various scenarios that causes people silent in social media for a certain amount of time. Take Earthquake emergence for example, when earthquake is happening, people hardly get a chance to use social media ( communication infrastructure might be paralyzed), thus it causes twitter volume in the affected area abnormal low. Some other examples, like flooding, blackout, and so on, often bring about similar phenomena. We call this kind of events as absenteeism event. When absenteeism event is over, and people's circumstance return to normal, it follows some kind of burst in social media since it's natural for people to talk about their experience concerning the absenteeism event. Usually, the severer of the absenteeism event is, the stronger absenteeism of the social media may present during the event, and the stronger burst will follow after.
-%
-%We propose a novel two-pass absenteeism based event detection algorithm. The underlying rationale of this algorithm is based on the following concepts.
-%\begin{enumerate}
-%\item At time interval $l$, using algorithm~\ref{algo:event_detection1} to identify absenteeism groups. For each absenteeism group $\mathcal{K}(s_j,a)$, it search burst groups $\mathcal{K}(s_k,b)$ which happens within a time window $L$. We claim that the time delay between $\mathcal{K}(s_j,a)$ and $\mathcal{K}(s_k,b)$ should be smaller than $L$, if the former is caused by the latter. When the time delay is larger that some pre-set $L$,  we claim that the burst group and the absenteeism group are uncorrelated.
-%\item $\mathcal{K}(s_j,a)$ and $\mathcal{K}(s_k,a)$ should also be geographically correlated. This is because people are more likely to pay attention to events around where they live. To mathematically measure the geographically closeness of two city sets $\mathcal{K}(s_j,a)$ and $\mathcal{K'}(s_k,b)$, we define closeness $\rho(\mathcal{K}(a),\mathcal{K'}(b))$ as
-%\begin{equation}
-%\label{eq:eventsimilarity}
-%\rho(\mathcal{K}(s_j,a),\mathcal{K'}(s_k,b)) = \frac{|\mathcal{K}(s_j,a)\cap\mathcal{K'}(s_k,b)|}{|\mathcal{K}(s_j,a)|\cdot|\mathcal{K'}(s_k,b)|}
-%\end{equation}, where $|\mathcal{K}(\cdot)|$ is the city number. When $\rho$ is above some threshold $\rho_{th}$, we infer that an absenteeism event occurred and that it evolved on social networks into distinct phases: first group absenteeism, followed by a spike or burst in user activity. We denote this absenteeism event as e$\{\mathcal{K}(s_j,a),\mathcal{K}(s_k,b),\tau\}$, $\tau$ is the time delay.
-%\item The computational complexity is $O(|\mathcal{I}^{bur}|\cdot |\mathcal{I}^{abs}|\cdot L\cdot |V|)$, and is $O(L|V|^3)$ in worst cases.
-%%For instance, taking the power-cut-off for instance, usually only people who live in the affected area will ``yield at " this event a lot because it brings inconvenience to their life. However, people who live outside of the affected areas would hardly mention this event. Thus, to measure the correlation between absenteeism pattern and burst pattern is proposed as:
-%\end{enumerate}
-%
-%\noindent\textbf{Remarks:}
-%
-%\noindent{In our real world, there are some absenteeism events, for example natural disasters (earthquake, flooding, electricity outage), generates absenteeism group and then burst group in social network. We propose the two-pass algorithm to detect those absenteeism events based on the assumption that those absenteeism and burst groups have strong correlation, both spatially and temporally}.
-%
-%
-%\begin{algorithm}[t]
-%\centering
-%\captionsetup{font=scriptsize}
-%\caption{Two-Pass Absenteeism Event Detection}
-%{\footnotesize \begin{algorithmic}[1]
-%\STATE {\bf Input:} graph and absenteeism score vector $\mathbf{G}(V,E;f^l)$ at time interval $l$, and time window size $L$.
-%\STATE {\bf Output:} absenteeism event set $\mathcal{E}$.	
-%\STATE{compute burst group set $\mathcal{I}^{bur}$ by algorithm~\ref{algo:event_detection1}};
-%		    	\FORALL {$\tau$ from $l+1$ to $l+L$}
-%		    	    \STATE{compute absenteeism group set $\mathcal{I}^{abs}$ by algorithm~\ref{algo:event_detection1}};
-%		    	    \FORALL {$\mathcal{K}(s_j,a)\in \mathcal{I}^{bur}$ and $\mathcal{K'}(s_k,b)\in \mathcal{I}^{abs}$}
-%				    	    		
-%		    	    		    \IF {$\rho(\mathcal{K}(s_j,a),\mathcal{K'}(s_k,b))\ge \rho_{th}$}
-%		    	    		    \STATE{add absenteeism event $e\{\mathcal{K}(s_j,a),\mathcal{K}(s_k,b),\tau\}$ to $\mathcal{E}$}
-%		    	    	    	\ENDIF
-%
-%                   \ENDFOR
-%
-%	            \ENDFOR	
-%		
-%\RETURN {absenteeism event set $\mathcal{E}$}.
-%\end{algorithmic}}
-%\label{algo:event_detection}
-%\end{algorithm}
-
-
-
-
 \begin{figure}[th]
 	\centering
 	\subfigure[wavelet $\psi_{s_1,a}$]{
-		\includegraphics[width=1.4in] {figures/s1.png}
+		\includegraphics[width=1.3in] {figures/s1.png}
 		\label{fig:Brazil_W_coeff_date31_s3}
 	}
 	\subfigure[wavelet $\psi_{s_2,a}$]{
-		\includegraphics[width=1.4in] {figures/s2.png}
+		\includegraphics[width=1.3in] {figures/s2.png}
 		\label{fig:Brazil_W_coeff_date31_s5}
 	}
-	\caption{Graph wavelets with center city $v_{83}$.}
+	\caption{Graph wavelets with center city $v_{83}$. $s_1$ = 1.31, $s_2$ = 0.68.}
 	\label{fig:graphwaveletscale}
 \end{figure}
 
@@ -641,11 +592,11 @@ As long as the scale level $J$ is high enough, $f$ can be well decomposed into t
 \begin{figure}[th]
 	\centering
 	\subfigure[$W_f(s_1,a)$]{
-		\includegraphics[width=1.4in] {figures/Brazil_W_coeff_date31_s3.png}
+		\includegraphics[width=1.3in] {figures/Brazil_W_coeff_date31_s3.png}
 		\label{fig:Brazil_W_coeff_date31_s3}
 	}
 	\subfigure[$W_f(s_2,a)$]{
-		\includegraphics[width=1.4in] {figures/Brazil_W_coeff_date31_s5.png}
+		\includegraphics[width=1.3in] {figures/Brazil_W_coeff_date31_s5.png}
 		\label{fig:Brazil_W_coeff_date31_s5}
 	}
 	\caption{Graph wavelet coefficient $W_f(s_1,a)$ and $W_f(s_2,a)$.}
@@ -697,7 +648,7 @@ Each city $v_i$'s location is represented by its geographical coordinate pair $l
 		\includegraphics[width=1.5in,height=1.2in] {figures/brazil_zscore_31.png}
 		\label{fig:brazil_zscore_31}
 	}
-	\caption{(a) Brazil $5$ nearest-neighbor Graph: 5321 cities an all edge weights are $1$. (b) Brazil Z-score on July 31th, 2013, the color bar shows the scale of Z-score.}
+	\caption{(a) Brazil's 5-nearest-neighbor Graph: 5321 cities, all edges' weights are $1$. (b) Brazil's Z-score distribution on July 31th, 2013. The color bar shows the scale of Z-score.}
 	\label{fig:knn_zscore}
 \end{figure}
 
@@ -783,7 +734,7 @@ Venezuela & Baseline & 0.078 &0.053 & 0.059 \\
 
 \subsection{Performance}
 We did experiment on three major protest countries: Brazil, Mexico and Venezuela, from Jan 2013 to Dec 2014. Taken the Gold Standard Report (GSR)~\cite{ramakrishnan2014beating} as grand truth, we run the group anomaly detection algorithm. For each day, decide whether there is any anomaly, if there is, identify the group of abnormal cities, then compare with GSR, see if the selected cities have protest events on that day, how many of them are matched with grand truth, how many of them do not have protest. We use recall, precision and F-measure to evaluate the performance.
-To evaluate our performance, we also compare with some intuitive approaches, like frequency based random assignment, we call it baseline model, and Z-score based selection methods. The baseline model is built according to the historical protest records of each city, based on frequency, predict the future protests occurrence. The Z-score approach is, selecting the group of cities whose Z-score across some threshold, say |Z-score|>3.
+To evaluate our performance, we also compare with some intuitive approaches, like frequency based random assignment, we call it baseline model, and Z-score based selection methods. The baseline model is built according to the historical protest records of each city, based on frequency, predict the future protests occurrence. The Z-score approach is, selecting the group of cities whose Z-score across some threshold, say $|Z-score|>3$.
 
 We compare three models' performance over two years period, and show the overall results on Table~\ref{table:models_compare}. Generally speaking, graph wavelet has the best precision, recall, and F-measure than baseline across countries. The mean F-measure for graph wavelet detection across models and countries is greater than other models. Interestingly, we find that the graph wavelet work at different efficiency levels depending on country. From Figure~\ref{fig:threecountry_performance}, we found graph wavelet model has a much higher recall in Venezuela than in Brazil, while has an inferior quality of event detection in Mexico than in Venezuela.
 
@@ -819,7 +770,7 @@ We compare three models' performance over two years period, and show the overall
 		\includegraphics[width=1.4in,height=0.7in] {figures/earthquake_cloud.png}
 		\label{fig:earthquake-cloud}
 	}
-	\caption{Iquique Earthquake, Chile. Above plots show differences in distributions of absenteeism score and wavelet coefficients calculated at 8:45 PM, April 1, 2014 (a-b) involving group absenteeism and later when burst in activity is captured at 11:00 AM, April 2, 2014 (c-d), respectively. (e) Tweet time series for Iquique on April 1, 2014. (f) Word cloud of Tweets which mention `Iquique'.}
+	\caption{Iquique Earthquake, Chile. (a-d) plots show differences in distributions of absenteeism score and wavelet coefficients calculated at 8:45 PM, April 1, 2014 (a-b) involving group absenteeism and later when burst in activity is captured at 11:00 AM, April 2, 2014 (c-d), respectively; (e) Tweet time series for Iquique on April 1, 2014; (f) Word cloud of Tweets which mention `Iquique'.}
 \label{fig:case1_wavelet}
 \end{figure}
 
@@ -865,7 +816,7 @@ As a result, we note that there is a strong connection between the burst in acti
 		\includegraphics[width=1.4in,height=0.7in] {figures/power-English.png}
 		\label{fig:power-cloud}
 	}
-	\caption{Power Outage in Venezuela. Above plots show differences in distributions of absenteeism score and wavelet coefficients calculated at 7:40 PM, December 2, 2013 (a-b) involving group absenteeism and later when burst in activity is captured at 8:45 PM in the same day (c-d), respectively. (e) Time series of Tweets volume. (f) Word cloud of Tweets mentioning `Caracas'.}
+	\caption{Power Outage in Venezuela. (a-d) plots show differences in distributions of absenteeism score and wavelet coefficients calculated at 7:40 PM, December 2, 2013 (a-b) involving group absenteeism and later when burst in activity is captured at 8:45 PM in the same day (c-d), respectively; (e) Time series of Tweets volume on December 2, 2013; (f) Word cloud of Tweets mentioning `Caracas'.}
 \label{fig:case2_wavelet}
 \end{figure}
 
@@ -906,7 +857,7 @@ The most dominant words are `light' and `blackout', even the Spanish phrase `sin
 		\includegraphics[width=1.3in, height=0.7in] {figures/holiday-cloud.png}
 		\label{fig:holiday-cloud}
 	}
-	\caption{The Christmas Day in Argentina: Above plots shows distributions of (a) absenteeism score and (b) wavelet coefficients calculated on December 25, 2013. (c) Time series comparing absenteeism score and user mobility corresponding to Tweets between December 5, 2013 and December 25, 2013.}
+	\caption{The Christmas Day in Argentina: (a-b) plots show distributions of (a) absenteeism score and (b) wavelet coefficients calculated on December 25, 2013; (c) Time series comparing absenteeism score and user mobility corresponding to Tweets between December 5 - 25, 2013.}
 \label{fig:case3_wavelet}
 \end{figure}
 
@@ -1165,3 +1116,54 @@ Existing approaches for event detection suffer from an inherent latency in their
 % 	\caption{Wavelet filter banks for Brazil graph.}
 % 	\label{fig:brazil_filter}
 % \end{figure}
+
+
+
+%\subsection{Group Absenteeism Event Detection}
+%\label{sec:Group Absenteeism Event Detection}
+%In our real world, there are various scenarios that causes people silent in social media for a certain amount of time. Take Earthquake emergence for example, when earthquake is happening, people hardly get a chance to use social media ( communication infrastructure might be paralyzed), thus it causes twitter volume in the affected area abnormal low. Some other examples, like flooding, blackout, and so on, often bring about similar phenomena. We call this kind of events as absenteeism event. When absenteeism event is over, and people's circumstance return to normal, it follows some kind of burst in social media since it's natural for people to talk about their experience concerning the absenteeism event. Usually, the severer of the absenteeism event is, the stronger absenteeism of the social media may present during the event, and the stronger burst will follow after.
+%
+%We propose a novel two-pass absenteeism based event detection algorithm. The underlying rationale of this algorithm is based on the following concepts.
+%\begin{enumerate}
+%\item At time interval $l$, using algorithm~\ref{algo:event_detection1} to identify absenteeism groups. For each absenteeism group $\mathcal{K}(s_j,a)$, it search burst groups $\mathcal{K}(s_k,b)$ which happens within a time window $L$. We claim that the time delay between $\mathcal{K}(s_j,a)$ and $\mathcal{K}(s_k,b)$ should be smaller than $L$, if the former is caused by the latter. When the time delay is larger that some pre-set $L$,  we claim that the burst group and the absenteeism group are uncorrelated.
+%\item $\mathcal{K}(s_j,a)$ and $\mathcal{K}(s_k,a)$ should also be geographically correlated. This is because people are more likely to pay attention to events around where they live. To mathematically measure the geographically closeness of two city sets $\mathcal{K}(s_j,a)$ and $\mathcal{K'}(s_k,b)$, we define closeness $\rho(\mathcal{K}(a),\mathcal{K'}(b))$ as
+%\begin{equation}
+%\label{eq:eventsimilarity}
+%\rho(\mathcal{K}(s_j,a),\mathcal{K'}(s_k,b)) = \frac{|\mathcal{K}(s_j,a)\cap\mathcal{K'}(s_k,b)|}{|\mathcal{K}(s_j,a)|\cdot|\mathcal{K'}(s_k,b)|}
+%\end{equation}, where $|\mathcal{K}(\cdot)|$ is the city number. When $\rho$ is above some threshold $\rho_{th}$, we infer that an absenteeism event occurred and that it evolved on social networks into distinct phases: first group absenteeism, followed by a spike or burst in user activity. We denote this absenteeism event as e$\{\mathcal{K}(s_j,a),\mathcal{K}(s_k,b),\tau\}$, $\tau$ is the time delay.
+%\item The computational complexity is $O(|\mathcal{I}^{bur}|\cdot |\mathcal{I}^{abs}|\cdot L\cdot |V|)$, and is $O(L|V|^3)$ in worst cases.
+%%For instance, taking the power-cut-off for instance, usually only people who live in the affected area will ``yield at " this event a lot because it brings inconvenience to their life. However, people who live outside of the affected areas would hardly mention this event. Thus, to measure the correlation between absenteeism pattern and burst pattern is proposed as:
+%\end{enumerate}
+%
+%\noindent\textbf{Remarks:}
+%
+%\noindent{In our real world, there are some absenteeism events, for example natural disasters (earthquake, flooding, electricity outage), generates absenteeism group and then burst group in social network. We propose the two-pass algorithm to detect those absenteeism events based on the assumption that those absenteeism and burst groups have strong correlation, both spatially and temporally}.
+%
+%
+%\begin{algorithm}[t]
+%\centering
+%\captionsetup{font=scriptsize}
+%\caption{Two-Pass Absenteeism Event Detection}
+%{\footnotesize \begin{algorithmic}[1]
+%\STATE {\bf Input:} graph and absenteeism score vector $\mathbf{G}(V,E;f^l)$ at time interval $l$, and time window size $L$.
+%\STATE {\bf Output:} absenteeism event set $\mathcal{E}$.	
+%\STATE{compute burst group set $\mathcal{I}^{bur}$ by algorithm~\ref{algo:event_detection1}};
+%		    	\FORALL {$\tau$ from $l+1$ to $l+L$}
+%		    	    \STATE{compute absenteeism group set $\mathcal{I}^{abs}$ by algorithm~\ref{algo:event_detection1}};
+%		    	    \FORALL {$\mathcal{K}(s_j,a)\in \mathcal{I}^{bur}$ and $\mathcal{K'}(s_k,b)\in \mathcal{I}^{abs}$}
+%				    	    		
+%		    	    		    \IF {$\rho(\mathcal{K}(s_j,a),\mathcal{K'}(s_k,b))\ge \rho_{th}$}
+%		    	    		    \STATE{add absenteeism event $e\{\mathcal{K}(s_j,a),\mathcal{K}(s_k,b),\tau\}$ to $\mathcal{E}$}
+%		    	    	    	\ENDIF
+%
+%                   \ENDFOR
+%
+%	            \ENDFOR	
+%		
+%\RETURN {absenteeism event set $\mathcal{E}$}.
+%\end{algorithmic}}
+%\label{algo:event_detection}
+%\end{algorithm}
+
+
+

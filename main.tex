@@ -684,7 +684,7 @@ Using the geocoding tool, we were able to extract Tweets corresponding to $598,3
 \subsection{Experimental Setup}
 \label{sec:experimental_setup}
 
-\paragraph{Graph Setup and $Z_{score}$ Time Series}
+\paragraph{Graph Setup}
 Each city $v_i$'s location is represented by its geographical coordinate pair $lat_i$ and $lon_i$. Instead of using the real physical distance, we define the distance of any two cities $v_i$ and $v_j$ as $d_{ij}=\sqrt{(lat_i-lat_j)^2+(lon_i-lon_j)^2}$. We setup graph $G$ as a $k$ neighbors graph, which means  each city is only  connected to its $k$-nearest-neighbors. In this paper, we set $k=5$, and all the edges' weights  in $G$ are 1. Figure~\ref{fig:brazil_graph_nn_5} shows Brazil' $5$ nearest-neighbor Graph with 5321 cities.
 
 \begin{figure}[t]
@@ -697,18 +697,18 @@ Each city $v_i$'s location is represented by its geographical coordinate pair $l
 		\includegraphics[width=1.5in,height=1.2in] {figures/brazil_zscore_31.png}
 		\label{fig:brazil_zscore_31}
 	}
-	\caption{(a) Brazil $5$ nearest-neighbor Graph: 5321 cities an all edge weights are $1$. (b) Brazil $Z_{score}$ on July 31th, 2013, the color bar shows the scale of $Z_{score}$.}
+	\caption{(a) Brazil $5$ nearest-neighbor Graph: 5321 cities an all edge weights are $1$. (b) Brazil Z-score on July 31th, 2013, the color bar shows the scale of Z-score.}
 	\label{fig:knn_zscore}
 \end{figure}
 
 
 
-\paragraph{Time Series $Z_{score}$}
-Considering the Tweets volume $X$ varies vastly among cities, instead of using $X$ itself, we use the normalized value $Z_{score}$, which is defined as:
+\paragraph{Absenteeism Score}
+Considering the Tweets volume $X$ varies vastly among cities, instead of using $X$ itself, we use the normalized value Z-score as absenteeism score, which is defined as:
 \begin{equation}
 \label{eq:Z_score}
-Z_{score}= \frac{X-\mu}{\sigma}
-\end{equation}Where, $\mu$ is the mean value of the previous $30$ days Tweets volume, and $\sigma$ is the corresponding standard deviation. As shown in Figure~\ref{fig:brazil_zscore_31}, different node color shows cities' different $Z_{score}$ value.
+Z-score= \frac{X-\mu}{\sigma}
+\end{equation}Where, $\mu$ is the mean value of the previous $30$ days Tweets volume, and $\sigma$ is the corresponding standard deviation. As shown in Figure~\ref{fig:brazil_zscore_31}, different node color shows cities' different Z-score value.
 
 \paragraph{Kernel function $g(x)$ and scaling function $h(x)$}
 Our choice for the wavelet generating kernel function, $g(x)$, and scaling function $h(x)$ is motivated by our goal to achieve scale-dependent localization. We set $g(x)$ and $h(x)$ as:
@@ -737,7 +737,7 @@ $k_0$ and $k_1$, given a new $\gamma_f'(\mathbf{G})$, the events number is estim
 
 \begin{table}[bt] %!htp
 \renewcommand{\arraystretch}{1.1}
-\caption{\label{table:models_compare} The performance of graph wavelet vs. baseline and Zscore.}
+\caption{\label{table:models_compare} The performance of graph wavelet vs. baseline and Z-score.}
 \scriptsize
 \centering
 \begin{tabular}{ l | l |l | l | l}
@@ -745,15 +745,15 @@ $k_0$ and $k_1$, given a new $\gamma_f'(\mathbf{G})$, the events number is estim
 \textbf{Country} & \textbf{Method}& \textbf{Precision}  & \textbf{Recall}  & \textbf{F-measure} \\
 \hline
 Brazil & Baseline & 0.052 &0.104 & 0.060\\
-       & Zscore & 0.117&0.307 & 0.159 \\
+       & Z-score & 0.117&0.307 & 0.159 \\
  & Graph wavelet& 0.404 &0.262 & 0.292 \\
 \hline
 Mexico & Baseline & 0.074 &0.124 & 0.090 \\
-       & Zscore & 0.221 &0.147 & 0.168 \\
+       & Z-score & 0.221 &0.147 & 0.168 \\
  & Graph wavelet& 0.397 &0.384 & 0.408 \\
 \hline
 Venezuela & Baseline & 0.078 &0.053 & 0.059 \\
-       & Zscore & 0.197 &0.197 & 0.189 \\
+       & Z-score & 0.197 &0.197 & 0.189 \\
  & Graph wavelet& 0.292 &0.554 & 0.355 \\
 \hline
 \end{tabular}
@@ -783,7 +783,7 @@ Venezuela & Baseline & 0.078 &0.053 & 0.059 \\
 
 \subsection{Performance}
 We did experiment on three major protest countries: Brazil, Mexico and Venezuela, from Jan 2013 to Dec 2014. Taken the Gold Standard Report (GSR)~\cite{ramakrishnan2014beating} as grand truth, we run the group anomaly detection algorithm. For each day, decide whether there is any anomaly, if there is, identify the group of abnormal cities, then compare with GSR, see if the selected cities have protest events on that day, how many of them are matched with grand truth, how many of them do not have protest. We use recall, precision and F-measure to evaluate the performance.
-To evaluate our performance, we also compare with some intuitive approaches, like frequency based random assignment, we call it baseline model, and Z-score based selection methods. The baseline model is built according to the historical protest records of each city, based on frequency, predict the future protests occurrence. The Z-score approach is, selecting the group of cities whose Z-score across some threshold, say $|Zscore|>3$.
+To evaluate our performance, we also compare with some intuitive approaches, like frequency based random assignment, we call it baseline model, and Z-score based selection methods. The baseline model is built according to the historical protest records of each city, based on frequency, predict the future protests occurrence. The Z-score approach is, selecting the group of cities whose Z-score across some threshold, say |Z-score|>3.
 
 We compare three models' performance over two years period, and show the overall results on Table~\ref{table:models_compare}. Generally speaking, graph wavelet has the best precision, recall, and F-measure than baseline across countries. The mean F-measure for graph wavelet detection across models and countries is greater than other models. Interestingly, we find that the graph wavelet work at different efficiency levels depending on country. From Figure~\ref{fig:threecountry_performance}, we found graph wavelet model has a much higher recall in Venezuela than in Brazil, while has an inferior quality of event detection in Mexico than in Venezuela.
 

@@ -110,7 +110,9 @@
 % not capitalized unless they are the first or last word of the title.
 % Linebreaks \\ can be used within to get better formatting as desired.
 % Do not put math or special symbols in the title.
-\title{``The Lull before the Storm": Event Detection\\ from Group Anomaly}
+\title{Group Anomaly Detection based on \\ Spectral Graph Wavelets}
+
+%``The Lull before the Storm": Event Detection from Group Anomaly
 
 %\title{Group Anomaly Detection using Graph Wavelet}
 % author names and affiliations
@@ -186,7 +188,7 @@ Another example comes from December 24, 2013, southern Brazil experienced widesp
 \label{fig:natal-protest}
 \end{figure}
 Investigating this phenomenon of unusually calm behavior online holds enormous potential for understanding localized, disruptive societal events.
-In this paper we focus on group anomaly detection which is not only able to capture burst events, but also absenteeism events, and introduce this important topic as a key data mining task for social media analytics.
+We focus on group anomaly detection which is not only able to capture burst events, but also absenteeism events, and introduce this important topic as a key data mining task for social media analytics.
 An \textit{absenteeism} event in social networks can be defined as an event which is characterized by a significant lull in activity such as a sudden, sharp decrease of Twitter volume within a short period of time (and which may precedes a major burst in re-activity).
 This paper presents the first study to systematically investigate group anomaly in Location Based Social Networks.
 To appropriately incorporate absenteeism concepts into our detection approach, we must first address the following questions
@@ -268,7 +270,7 @@ Conventionally, this problem can be described as following: \emph{given a graph 
     \Sigma=\underset{P\subseteq V, P \mbox{ is compact}}{\arg\min}\ \ \sum_{v_k\in P} {f(k)}
 \end{eqnarray} }
 However, how to define compactness of the selected subset $\Sigma$ is an open problem.
-A general solution to this problem is employing a combinatorial optimization method, by defining a constrained objective function over a network one can identify a subset of vertices which maximize the corresponding function~\cite{rozenshtein2014event}. Therefore, Equation~\ref{eq: problem} can be modified as:
+A general solution to this problem is employing a combinatorial optimization method, by defining a constrained objective function over a network one can identify a subset of vertices which minimize the corresponding function~\cite{rozenshtein2014event}. Therefore, Equation~\ref{eq: problem} can be modified as:
 \begin{eqnarray}
  \label{eq: problem_conventional}
     \Sigma=\underset{P\subseteq V}{\arg\min}\ \ \sum_{v_k\in P} {f(k)}+\lambda \mu(P)
@@ -347,16 +349,16 @@ Figure~\ref{fig:graph_G} shows an undirected graph $\mathbf{G_1}$, and each edge
 \begin{figure}[ht]
 	\centering
 	\subfigure[]{
-		\includegraphics[width= 2.5in,height=1in] {figures/frequency.png}
+		\includegraphics[width= 2.4in,height=0.9in] {figures/frequency.png}
 		\label{fig:frequency1}
 	}
 	\subfigure[]{
-		\includegraphics[width= 2.4in,height=1in] {figures/g1_gamma.png}
+		\includegraphics[width= 2.3in,height=0.9in] {figures/g1_gamma.png}
 		\label{fig:g1_gamma}
 	}
 
 	\subfigure[]{
-		\includegraphics[width= 2.55in,height=1in] {figures/same_graph.png}
+		\includegraphics[width= 2.45in,height=0.9in] {figures/same_graph.png}
 		\label{fig:same_graph}
 	}
 
@@ -405,10 +407,10 @@ In this subsection, we introduce the anomaly index $\gamma_f(l;\mathbf{G})$ to m
 	\label{fig:f_on_g}
 \end{figure}
 
-\begin{figure}[h]
+\begin{figure}[t]
 	\centering
     {
-		\includegraphics[width= 3.2in,height=1in] {figures/new_graph.png}
+		\includegraphics[width= 3in,height=1in] {figures/new_graph.png}
 		\label{fig:distribution2}
 	}
 	\caption{Anomaly indices of $\mathbf{G_2}$ and $\mathbf{G_3}$.}
@@ -571,40 +573,6 @@ As long as the scale level $J$ is high enough, $f$ can be well decomposed into t
 \end{enumerate}
 
 
-\begin{figure}[th]
-	\centering
-	\subfigure[wavelet $\psi_{s_1,a}$]{
-		\includegraphics[width=1.3in] {figures/s1.png}
-		\label{fig:Brazil_W_coeff_date31_s3}
-	}
-	\subfigure[wavelet $\psi_{s_2,a}$]{
-		\includegraphics[width=1.3in] {figures/s2.png}
-		\label{fig:Brazil_W_coeff_date31_s5}
-	}
-	\caption{Graph wavelets with center city $v_{83}$. $s_1$ = 1.31, $s_2$ = 0.68.}
-	\label{fig:graphwaveletscale}
-\end{figure}
-
-
-
-
-
-\begin{figure}[th]
-	\centering
-	\subfigure[$W_f(s_1,a)$]{
-		\includegraphics[width=1.3in] {figures/Brazil_W_coeff_date31_s3.png}
-		\label{fig:Brazil_W_coeff_date31_s3}
-	}
-	\subfigure[$W_f(s_2,a)$]{
-		\includegraphics[width=1.3in] {figures/Brazil_W_coeff_date31_s5.png}
-		\label{fig:Brazil_W_coeff_date31_s5}
-	}
-	\caption{Graph wavelet coefficient $W_f(s_1,a)$ and $W_f(s_2,a)$.}
-	\label{fig:graphwaveletcoefficient}
-\end{figure}
-
-
-
 
 
 \section{EXPERIMENTAL RESULTS}
@@ -630,7 +598,19 @@ Using the geocoding tool, we were able to extract Tweets corresponding to $598,3
 %We assume that such events are the predominant reasons that can cause group absenteeism on social networks.
 %To discern when major events occurred, we retrieved records of natural disaster related events involving earthquakes, floods, and landslides from European Emergency Response Coordination Center(ERCC)~\footnote{http://erccportal.jrc.ec.europa.eu/} and World Top Stories Timeline~\footnote{http://www.mapreport.com/}.
 
-
+\begin{figure}[t]
+	\centering
+	\subfigure[]{
+		\includegraphics[width=1.2in,height=1.1in] {figures/brazil_graph_nn_5.png}
+		\label{fig:brazil_graph_nn_5}
+	}
+	\subfigure[]{
+		\includegraphics[width=1.2in,height=1.1in] {figures/brazil_zscore_31.png}
+		\label{fig:brazil_zscore_31}
+	}
+	\caption{(a) Brazil's 5-nearest-neighbor Graph: 5321 cities, all edges' weights are $1$. (b) Brazil's Z-score distribution on July 31, 2013. The color bar shows the scale of Z-score.}
+	\label{fig:knn_zscore}
+\end{figure}
 
 \subsection{Experimental Setup}
 \label{sec:experimental_setup}
@@ -638,19 +618,36 @@ Using the geocoding tool, we were able to extract Tweets corresponding to $598,3
 \paragraph{Graph Setup}
 Each city $v_i$'s location is represented by its geographical coordinate pair $lat_i$ and $lon_i$. Instead of using the real physical distance, we define the distance of any two cities $v_i$ and $v_j$ as $d_{ij}=\sqrt{(lat_i-lat_j)^2+(lon_i-lon_j)^2}$. We setup graph $G$ as a $k$ neighbors graph, which means  each city is only  connected to its $k$-nearest-neighbors. In this paper, we set $k=5$, and all the edges' weights  in $G$ are 1. Figure~\ref{fig:brazil_graph_nn_5} shows Brazil' $5$ nearest-neighbor Graph with 5321 cities.
 
+
 \begin{figure}[t]
 	\centering
-	\subfigure[]{
-		\includegraphics[width=1.5in,height=1.2in] {figures/brazil_graph_nn_5.png}
-		\label{fig:brazil_graph_nn_5}
+	\subfigure[wavelet $\psi_{s_1,a}$]{
+		\includegraphics[width=1.2in] {figures/s1.png}
+		\label{fig:Brazil_W_coeff_date31_s3}
 	}
-	\subfigure[]{
-		\includegraphics[width=1.5in,height=1.2in] {figures/brazil_zscore_31.png}
-		\label{fig:brazil_zscore_31}
+	\subfigure[wavelet $\psi_{s_2,a}$]{
+		\includegraphics[width=1.2in] {figures/s2.png}
+		\label{fig:Brazil_W_coeff_date31_s5}
 	}
-	\caption{(a) Brazil's 5-nearest-neighbor Graph: 5321 cities, all edges' weights are $1$. (b) Brazil's Z-score distribution on July 31, 2013. The color bar shows the scale of Z-score.}
-	\label{fig:knn_zscore}
+	\caption{Graph wavelets with center city $v_{83}$. $s_1$ = 1.31, $s_2$ = 0.68.}
+	\label{fig:graphwaveletscale}
 \end{figure}
+
+
+\begin{figure}[t]
+	\centering
+	\subfigure[$W_f(s_1,a)$]{
+		\includegraphics[width=1.2in,height=1.1in] {figures/wavelet_coeff_s1.png}
+		\label{fig:Brazil_W_coeff_date31_s3}
+	}
+	\subfigure[$W_f(s_2,a)$]{
+		\includegraphics[width=1.2in,height=1.1in] {figures/wavelet_coeff_s6.png}
+		\label{fig:Brazil_W_coeff_date31_s5}
+	}
+	\caption{Graph wavelet coefficient $W_f(s_1,a)$ and $W_f(s_2,a)$.}
+	\label{fig:graphwaveletcoefficient}
+\end{figure}
+
 
 
 
@@ -662,7 +659,7 @@ Z-score= \frac{X-\mu}{\sigma}
 \end{equation}Where, $\mu$ is the mean value of the previous $30$ days Tweets volume, and $\sigma$ is the corresponding standard deviation. As shown in Figure~\ref{fig:brazil_zscore_31}, different node color shows cities' different Z-score value.
 
 \paragraph{Kernel function $g(x)$ and scaling function $h(x)$}
-Our choice for the wavelet generating kernel function, $g(x)$, and scaling function $h(x)$ is motivated by our goal to achieve scale-dependent localization. We set $g(x)$ and $h(x)$ as:
+Our choice for the wavelet generating kernel function, $g(x)$, and scaling function $h(x)$ is motivated by our goal to achieve scale-dependent localization. We follow the kernel function setting in~\cite{hammond2011wavelets}, which behaves as a monic power near the origin, and has power law decay for large x. $g(x)$ and $h(x)$ are set as:
 \begin{equation}
 g(x) = \left\{ \begin{array}{rl}
  x &\mbox{ for $x<1$} \\
@@ -673,7 +670,8 @@ s(x) &\mbox{ for $1\leq x \leq 2$} \\
 \begin{equation}
 h_{x}= 1.385*exp(-(\frac{20x}{0.6\lambda_{max}})^4)
 \end{equation}
-The scale set $\{s_j\}_{j=1}^J$ is selected to be equally logarithmically spaced between the minimum and maximum scales $s_1$ and $s_J$, which are defined in~\cite{hammond2011wavelets}. We set $J=6$ in the experiment.
+The scale set $\{s_j\}_{j=1}^J$ is selected to be equally logarithmically spaced between the minimum and maximum scales $s_1$ and $s_J$, which are defined in~\cite{hammond2011wavelets}. We set $J=6$ in the experiment. Figure~\ref{fig:graphwaveletscale} shows two different scaled wavelets on Brazil's $5$-nearest-neighbor graph. Comparing Figure~\ref{fig:Brazil_W_coeff_date31_s3} with Figure~\ref{fig:Brazil_W_coeff_date31_s5}, we can see that, when scale increases, more cities (with deeper color) are selected. Figure~\ref{fig:graphwaveletcoefficient} shows the corresponding wavelet coefficients.
+We also try another kernel function, i.e. Mexico hat function, and find that as long as the kernel function monotonicity is the same, the difference of the wavelet coefficient is negligible.
 
 \paragraph{Anomaly index $\gamma_f(G)$ and $\omega_{th}$}
 We claim that the event frequency $\eta$ is linear to $\gamma_f(\mathbf{G})$, described as
@@ -681,9 +679,7 @@ We claim that the event frequency $\eta$ is linear to $\gamma_f(\mathbf{G})$, de
 \label{eq:linear_equation}
 \eta = k_0*\gamma_f(\mathbf{G}) + k_1
 \end{equation}We use historical data to train $k_0$ and $k_1$ by least square error criterion. Once we know
-$k_0$ and $k_1$, given a new $\gamma_f'(\mathbf{G})$, the events number is estimated as $m=\left \lceil \eta' \right \rceil$. After that the threshold $\omega_{th}$ is set as the $m$ largest $W_f(s_j,a)$, for all $a\in V$, $0\le j \le J$.
-
-
+$k_0$ and $k_1$, given a new $\gamma_f'(\mathbf{G})$, the events number is estimated as $m=\left \lceil \eta' \right \rceil$. After that the threshold $\omega_{th}$ is set as the $m_{th}$ largest $W_f(s_j,a)$, for all $a\in V$, $0\le j \le J$.
 
 
 \begin{table}[bt] %!htp
@@ -714,22 +710,23 @@ Venezuela & Baseline & 0.078 &0.053 & 0.059 \\
 \begin{figure}[t]
 	\centering
 	\subfigure[Brazil]{
-		\includegraphics[width= 2.6in,height=1.4in] {figures/performance_compare_bar_graph_brazil.png}
+		\includegraphics[width= 2.6in,height=1.3in] {figures/performance_compare_bar_graph_brazil.png}
 		\label{Brazil_performance}
 	}
 	\hfill
 	\subfigure[Mexico]{
-		\includegraphics[width= 2.6in,height=1.4in] {figures/performance_compare_bar_graph_mexico.png}
+		\includegraphics[width= 2.6in,height=1.3in] {figures/performance_compare_bar_graph_mexico.png}
 		\label{Mexico_performance}
 	}
 	\hfill
 	\subfigure[Venezuela]{
-		\includegraphics[width= 2.6in,height=1.4in] {figures/performance_compare_bar_graph_venezuela.png}
+		\includegraphics[width= 2.6in,height=1.3in] {figures/performance_compare_bar_graph_venezuela.png}
 		\label{Venezuela_performance}
 	}
 	\caption{Brazil, Mexico and Venezuela protest detection performance.}
 \label{fig:threecountry_performance}
 \end{figure}
+
 
 
 \subsection{Performance}

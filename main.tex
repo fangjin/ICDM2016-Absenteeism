@@ -525,8 +525,8 @@ f(n)=\sum_{a=v_0}^{v_{N-1}}\sum_{j=0}^{J}W_{f}(s_j,a)\psi_{s,a}(n).
 $d_G(n,a)$ is the shortest path distance, which is the minimum number of edges in any path that connect vertices $v_n$ and $v_a$~\cite{hammond2011wavelets}. Equation~\ref{equ:waveletbound} shows for any vertex $v_n$ that is far away from center vertex $v_a$ ($d_G(n,a)>K$), $\frac{|\psi_{s,a}(n)|}{||\psi_{s,a}||}$ is upper bounded by $D\beta$. In other words, for vertex $v_n$ which is far away form vertex $v_a$, its wavelet value is linearly attenuated by scale $s$.  When the scale $s$ is small, their wavelet value of marginal vertices will be vanished quickly. The marginal vertices are those which satisfy equation~\ref{equ:waveletbound}. All the other vertices are called kernel vertices, denoted by $\mathcal{K}(s,a)$. Obviously, $\forall v_n \in \mathcal{K}(s,a)$,  $d_G(n,a)\le K$. Thus $\mathcal{K}(s,a)$ is automatically compact.
 Figure~\ref{fig:graphwaveletscale} shows two graph wavelets centered on the same vertex $a$, but with two different scales, $\psi_{s_1,a}$ and $\psi_{s_2, a}$, where $s_1<s_2$. The length of the vertical bar on each vertex denotes its graph wavelet value. The highlighted areas denote the kernel vertices ($d_G(n,a)\le 1$), and the others are marginal vertices. We can see that the wavelet values  on marginal vertices in Figure~\ref{fig:scale1} are smaller than those in figure \ref{fig:scale2}. Figure~\ref{fig:scale3} is $f$'s distribution along each vertex, and Figure~\ref{fig:scale4} shows the wavelet coefficients with center node $a$ for different scales, which indicates $W_f(s_2,a)$ has the largest value, and $W_f(s_3,a)$ has the smallest.
  \end{enumerate}
- 
- 
+
+
 
 \subsection{Group Anomaly Detection via Graph Wavelet}
 \label{sec:Group_Anomaly_Detection_via_graph_wavelet}
@@ -648,7 +648,7 @@ Each city $v_i$'s location is represented by its geographical coordinate pair $l
 		\includegraphics[width=1.5in,height=1.2in] {figures/brazil_zscore_31.png}
 		\label{fig:brazil_zscore_31}
 	}
-	\caption{(a) Brazil's 5-nearest-neighbor Graph: 5321 cities, all edges' weights are $1$. (b) Brazil's Z-score distribution on July 31th, 2013. The color bar shows the scale of Z-score.}
+	\caption{(a) Brazil's 5-nearest-neighbor Graph: 5321 cities, all edges' weights are $1$. (b) Brazil's Z-score distribution on July 31, 2013. The color bar shows the scale of Z-score.}
 	\label{fig:knn_zscore}
 \end{figure}
 
